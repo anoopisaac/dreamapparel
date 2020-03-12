@@ -1,0 +1,21 @@
+<div class="message-dialog">
+  <div class="header window-move-handle">
+    <div class="close-btn" (click)="onCancel($event)">
+      <app-svg-icon class="cross" [icon]="'close-cross'"></app-svg-icon>
+    </div>
+  </div>
+  <div class="content">
+    <p class="txt" *ngIf="messageBox.type===MessageType.INFO || messageBox.type===MessageType.CONFIRMATION">
+      {{messageBox.message}}
+    </p>
+  </div>
+  <div class="footer">
+    <button class="cbtn ok" (click)="onConfirm()">
+      <p class="btn-label txt">OK</p>
+    </button>
+    <button class="cbtn" (click)="onCancel($event)" *ngIf="messageBox.type===MessageType.CONFIRMATION">
+      <p class="btn-label txt">Cancel</p>
+    </button>
+  </div>
+</div>
+<!-- <div class="message-background"></div> -->

@@ -1,0 +1,73 @@
+.contact-us{
+    width: 300px;
+    display: grid;
+    box-shadow: 1px 1px 2px 1px #737373;
+    background: white;
+    border-radius: 3px;
+    $line-color: #d0d9e0;
+    position: fixed;
+    left: calc(50% - 300px/2);
+    top: 50px;
+    z-index: 13;
+    display: grid;
+    grid-auto-rows: max-content;
+    padding: 15px 10px;
+    gap: 10px;
+    height: max-content;
+    min-height: 100px;   
+    .close{
+        position: absolute;
+        left: calc(100% - 10px);
+        top: 0%;
+        color: red;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    input,textarea{
+        padding-left: 4px;
+        border: 0px;
+        background: #eaeaea;
+        &:focus{
+            outline: none;
+        }
+    }
+    .user-full-name{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: max-content;
+        grid-column-gap: 10px;
+        >input{
+            height: 25px;;
+        }
+    }
+    >.email{
+        height: 25px;;
+    }
+    >.label{
+        height: 25px;
+    }
+    >.text{
+        // border-bottom: var(--wire-tool-border);
+        // background: #eaeaea;
+        &:focus{
+            outline: none;
+        }
+    }
+    >.submit{
+        height: 20px;
+        background: var(--paypal-color);
+        display: grid;
+        >p.txt{
+            place-self:center;
+            color: white;
+            font-size: 10px;
+        }
+        // place-self:center;
+    }
+    .thank-you{
+        position: relative;
+        top: 30px;
+        font-size: 12px;
+    }
+
+}

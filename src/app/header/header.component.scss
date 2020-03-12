@@ -1,0 +1,22 @@
+:host{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: max-content;
+    height: 50px;
+    .header-icons{
+        position: relative;
+        right: 10px;
+        align-self: center;
+        justify-self: end;
+        height: max-content;
+        grid-template-columns: max-content max-content;
+        display: grid;
+        grid-gap: 10px;
+        app-svg-icon{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
+    
+}

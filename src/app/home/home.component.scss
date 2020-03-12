@@ -1,0 +1,17 @@
+:host{
+    grid-template-rows: 500px max-content max-content;
+    grid-template-areas: 'top' 'bottom' 'footer';
+    >.banner{
+        grid-area: top;
+    }
+    >.header{
+        grid-area: top;
+    }
+    >.product-list{
+        grid-area: bottom;
+    }
+    >.footer{
+        grid-area: footer;
+    }
+
+}

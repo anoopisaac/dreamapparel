@@ -1,0 +1,103 @@
+<div class="background">
+    <div class="top"></div>
+    <div class="bottom"></div>
+</div>
+
+<div class="separator"></div>
+
+<div class="card-container">
+    <div class="card-holder" [attr.title]="getTitle()" [class.mask]="isProcessingChallenge">
+        <div class="card" *ngFor="let card of getCards();let i=index"
+            [class.enabled]="challengeState===ChallengeState.PAYMENT_CAPTURED" [class.selected]="isCardSelected(i)"
+            (click)="onCardClick(i)">
+        </div>
+    </div>
+    <!-- <div class="start-playing" *ngIf="challengeState===ChallengeState.PAYMENT_CAPTURED">
+        Please choose a card by clicking on it.
+    </div> -->
+    <div class="submit-challenge cbtn" (click)="submitChallenge()" *ngIf="showSubmitButton()" [ngClass]="animClass"
+        (animationend)="animClass=''" [class.mask]="isProcessingChallenge">
+        <p class="txt">Submit</p>
+        <div *ngIf="isProcessingChallenge" [ngClass]="spinnerClass"></div>
+    </div>
+</div>
+
+
+<div class="payment">
+    <div class="about-game">
+        <p class="txt">One of the 9 cards holds a $10 Amazon Gift Card and all others holds $0.2</p>
+        <p class="txt">Try picking $10 card.</p>
+        <p class="txt">You can activate the cards by paying $2.</p>
+    </div>
+    <div class="payment-holder" [style.display]="displayPaypalButton()">
+        <div class="payment-info">
+            <p class="txt">$2</p>
+        </div>
+        <div class="paypal-holder" #paypal>
+        </div>
+    </div>
+    <div class="start-over cbtn" *ngIf="showStartOverButton()" (click)="window.location.reload()">
+        <p class="txt">Start Over</p>
+    </div>
+    <div class="share-link" *ngIf="state.appUser!==undefined">
+        <div class="title">
+            <app-svg-icon [icon]="'share-money'"></app-svg-icon>
+            <p class="txt">Consider sharing below link and earn a percentage of the profit that
+                we make.
+            </p>
+        </div>
+        <div class="links">
+            <a [attr.href]="getShareLink('facebook')" target="_blank" (click)="onShare('facebook')"><i
+                    class="font-icon fa-facebook"></i></a>
+            <!-- <a [attr.href]="getShareLink('pinterest')" target="_blank" (click)="onShare('pinterest')"><i
+                    class="font-icon fa-pinterest"></i></a> -->
+            <a target="_blank" href="http://pinterest.com/pin/create/button/?url=https://games.beachred.com&media=https://games.beachred.com/assets/aim.png&description=A chance to win $10 Amazon gift card and more"
+                class="pin-it-button" count-layout="horizontal">
+                <i class="font-icon fa-pinterest"></i>
+            </a>
+            <a class="whatsapp" [attr.href]="getShareLink('whatsapp')" *ngIf="isUserAgenMobile()===true"
+                data-action="share/whatsapp/share" (click)="onShare('whatsapp')"><i
+                    class="font-icon fa-whatsapp"></i></a>
+            <span class="or">|</span>
+            <!-- <p class="message txt">or message the link <span class="link">{{getShareLink('email')}}</span></p> -->
+            <div class="message-text">
+                <p class="message txt">or copy and message the <a href="javascript:undefined"
+                        (click)="copyToClipBoard(getShareLink('ccb'))">link</a> </p>
+                <app-svg-icon [icon]="'ccb'" title="click to copy" (click)="copyToClipBoard(getShareLink('ccb'))">
+                </app-svg-icon>
+            </div>
+
+        </div>
+    </div>
+    <div class="earnings">
+        <p class="txt">Click here to see your earnings</p>
+        <div class="cbtn" [routerLink]="['/earnings']">
+            <p class="txt">my earnings</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="success-message" *ngIf="showCallengeResponseMessage===true">
+    <ng-container *ngIf="challengeState===ChallengeState.CHALLENGE_SUCCESS">
+        <app-svg-icon class="gift" [icon]="'gift'"></app-svg-icon>
+    </ng-container>
+    <p class="txt" *ngIf="challengeState===ChallengeState.CHALLENGE_SUCCESS">
+        Hurray! you have won your $10 Amazon Gift card. Please confirm your email, for us to send you the gift card.
+    </p>
+    <p class="txt" *ngIf="challengeState===ChallengeState.CHALLENGE_FAILED">
+        You have won only $0.2 this time. We wish you a better luck next time.
+    </p>
+    <div class="earnings">
+        <p class="txt">You can see all your earnings here. <a href="" [routerLink]="['/earnings']">earnings</a></p>
+    </div>
+    <div class="email-confirmation">
+        <p class="txt label">Email:</p>
+        <input type="text" class="email white-bg" #email [ngModel]="userEmail">
+        <div class="button" (click)="submitEmail(email.value)">OK</div>
+    </div>
+    <p class="txt invalid" *ngIf="!isEmailValid">* Please enter a valid email</p>
+    <p class="txt amounts-upto" *ngIf="challengeState===ChallengeState.CHALLENGE_FAILED">You will receive a Amazon gift
+        card once
+        your total earnings amounts upto $10</p>
+</div>

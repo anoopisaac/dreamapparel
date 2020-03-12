@@ -1,0 +1,10 @@
+<!-- <app-scratch></app-scratch> -->
+<!-- <app-stripe-checkout></app-stripe-checkout> -->
+<app-svg-icon class="contact-us" [icon]="'email'" (click)="showContactUsForm()"></app-svg-icon>
+<router-outlet></router-outlet>
+<!-- <app-payment></app-payment> -->
+<app-message-box class="movable" data-movable-selector=".movable.color-picker"
+    [messageBox]="state.dialogMessage" *ngIf="state.dialogMessage">
+</app-message-box>
+<app-contact-us *ngIf="state.contactForm"></app-contact-us>
+<input type="text" name="ccb" id="ccb">

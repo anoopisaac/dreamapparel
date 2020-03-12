@@ -1,0 +1,18 @@
+<div class="contact-us">
+    <div class="close" (click)="closeContactUs()">×</div>
+    <div class="user-full-name">
+        <input type="text" class="cinput" name="first" placeholder="first name" [(ngModel)]="state.contactForm.fName">
+        <input type="text" class="cinput" name="last" placeholder="last name" [(ngModel)]="state.contactForm.lName">
+    </div>
+    <div class="error-message txt" *ngIf="getErrorMessage('fName')">{{getErrorMessage('fName')}}</div>
+    <input type="text" name="email" class="email cinput" placeholder="email" [(ngModel)]="state.contactForm.email">
+    <div class="error-message txt" *ngIf="getErrorMessage('email')">{{getErrorMessage('email')}}</div>
+    <!-- <div class="label">Feedback</div> -->
+    <textarea name="" cols="30" rows="10" class="text cinput" placeholder="content"
+        [(ngModel)]="state.contactForm.content"></textarea>
+    <div class="error-message txt" *ngIf="getErrorMessage('content')">{{getErrorMessage('content')}}</div>
+
+    <div class="cbtn submit" (click)="submitContactForm()">
+        <p class="txt">Submit</p>
+    </div>
+</div>
