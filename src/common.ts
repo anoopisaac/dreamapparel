@@ -34,6 +34,114 @@ export interface AppUser {
   uid: string, challShareId: string, challSrcUid: string
 }
 
+export class Cart {
+  productLines: ProductLine[] = [];
+}
+export class ProductLine {
+  qty: number;
+  productSku: ProductSku;
+  price: number;
+}
+
+export class Order {
+  productLines: ProductLine[] = [];
+  shippingAddress: Address;
+  billingAddress: Address;
+  totalAmt: number;
+  orderStatus: OrderStatus;
+}
+export enum CartStatus {
+  CREATED = 'created', SHIPPING_ADDRESS_ADDED = 'shipping-addr-added', BILLING_ADDRESS_ADDED = 'billing-addr-added', PAYMENT_DETAILS_ADDED = 'shipping-addr-added'
+}
+export enum OrderStatus {
+  CREATED = 'created', PAYMENT_SUCCESS = 'payment-success', PAYMENT_PROCESSING = 'payment-processing'
+}
+
+export class Address {
+  fName: string;
+  lName: string;
+  line1: string;
+  line2: string;
+  citry: string;
+  state: string;
+  country: string;
+  phone: number;
+  pin: number;
+}
+
+export enum CountryStates {
+  KERALA = 'kerala'
+}
+
+export class Product {
+  title: string;
+  description: string;
+  id: string;
+  colors: string[] = [];
+  sizeVariants: ProductSizeVariant[] = [];
+}
+export class ProductSku {
+  productId: string;
+  produttVariantId: string;
+  imagePosId: string;
+  color: string;
+}
+
+/**
+ * this will be specific for each product for ex: men v neck will have different image size compare to women vneck even though image is same
+ */
+export class ImagePosition {
+  // holds the mapping between image data (ex:cars) with prodid ex: men vneck 
+  imgDataId: string;
+  // you might need mapping directly with size variant with is different for different size variant
+  prodId: string;
+  width: number;
+  height: number;
+  // how far is image placed from the top.
+  top: number;
+}
+
+// /**
+//  * stores the location of the image and also the size width and the placement
+//  */
+// export class ProductImageMapping {
+//   prodId: string;
+//   // location of images
+//   imgPosId: string;
+//   imgDataId: string;
+// }
+
+export class Category {
+  public __selected = false;
+  constructor(public title: string, public id: string) {
+
+  }
+}
+
+export enum ProductType {
+  MEN_VNECK = 'MEN_VNECK', WOMEN_VNECK = 'WOMEN_VNECK', MEN_ROUND_NECK = 'MEN_ROUND_NECK', WOMEN_ROUND_NECK = 'WOMEN_ROUND_NECK'
+}
+
+export enum ImageType {
+  CARS_MUSTANG = 'CARS_MUSTANG', KIDS_CUTE_ANIMALS = 'KIDS_CUTE_ANIMALS', KIDS_CUTE_ANIMALS_WATER_COLOR = 'KIDS_CUTE_ANIMALS_WATER_COLOR'
+}
+
+export class ImageData {
+  imgId: ImageType;
+  // what kind of image, is it car, animal etc
+  tagName: string;
+  folderName: string;
+  imageNames: string[] = [];
+}
+
+export class ProductSizeVariant {
+  size: Size;
+  price: number;
+}
+
+export enum Size {
+  SMALL = 'S', MEDIUM = 'M', LARGE = 'L', XLARGE = 'XL', XXLARGE = 'XXL'
+}
 /**
  * this is used to validate form fields
  */

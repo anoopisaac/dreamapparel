@@ -1,0 +1,23 @@
+:host{
+    >.categories{
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        grid-gap: 10px;
+        justify-content: center;
+        >.category{
+            cursor: pointer;
+            font-family: Roboto;
+            position: relative;
+            &.selected::after{
+                position: absolute;
+                content: '';
+                height: 2px;
+                background: black;
+                width: 100%;
+                top: 100%;
+                left: 0%;
+            }
+        }
+    }
+}
