@@ -2,5 +2,7 @@
     <div class="category" [class.selected]="category.__selected" *ngFor="let category of state.categories" (click)="selectCategory(category)">{{category.title}}</div>
 </div>
 <div class="products">
-    <div class="product" *ngFor="state.products"></div>
+    <div class="product" *ngFor="let product of state.products">
+
+    </div>
 </div>

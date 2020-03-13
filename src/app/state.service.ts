@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ImagePosition, ImageData, ImageType, ProductType, Category } from 'src/common';
+import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ImagePosition, ImageData, ImageType, ProductType, Category, CategoryType, SubCategoryType, SubCategory } from 'src/common';
 import { BaseComponent } from './base/base.component';
 import { User } from 'firebase';
 
@@ -8,10 +8,13 @@ import { User } from 'firebase';
 })
 export class State {
 
-  constructor() { }
+  constructor() {
+    this.setupForTesting();
+  }
 
   dialogMessage: MessageBox;
-  categories: Category[] = [new Category('Men', 'men'), new Category('Women', 'women'), new Category('Kid', 'kid'), new Category('Infant', 'infant')];
+  categories: Category[] = [new Category(CategoryType.MEN), new Category(CategoryType.WOMEN), new Category(CategoryType.KID), new Category(CategoryType.INFANT)];
+  subCategoies: SubCategory[] = [new SubCategory(SubCategoryType.ROUDNECK), new SubCategory(SubCategoryType.VNECK), new SubCategory(SubCategoryType.ROMPERS)]
   user: User
   earnings: Earning;
   appUser: AppUser;

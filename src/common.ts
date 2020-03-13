@@ -17,6 +17,13 @@ export class Base {
   baseId: string;
 }
 
+export enum CategoryType {
+  MEN = 'Men', WOMEN = 'Women', KID = 'Kid', INFANT = 'Infant'
+}
+export enum SubCategoryType {
+  VNECK = 'VNECK', ROUDNECK = 'ROUNDNECK', ROMPERS = 'ROMPERS'
+}
+
 export interface Earning {
   affiliateAmount: number, gamingAmount: number;
 }
@@ -113,7 +120,13 @@ export class ImagePosition {
 
 export class Category {
   public __selected = false;
-  constructor(public title: string, public id: string) {
+  constructor(public type: CategoryType) {
+
+  }
+}
+export class SubCategory {
+  public __selected = false;
+  constructor(public type: SubCategoryType) {
 
   }
 }
