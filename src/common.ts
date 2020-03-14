@@ -18,10 +18,10 @@ export class Base {
 }
 
 export enum CategoryType {
-  MEN = 'Men', WOMEN = 'Women', KID = 'Kid', INFANT = 'Infant'
+  MEN = 'MEN', WOMEN = 'WOMEN', BOY = 'BOYS', GIRL = 'GIRLS', INFANT = 'INFANT'
 }
 export enum SubCategoryType {
-  VNECK = 'VNECK', ROUDNECK = 'ROUNDNECK', ROMPERS = 'ROMPERS'
+  VNECK = 'V neck', ROUDNECK = 'Round neck', ROMPERS = 'Rompers'
 }
 
 export interface Earning {
@@ -84,14 +84,26 @@ export class Product {
   title: string;
   description: string;
   id: string;
-  colors: string[] = [];
+  colorVariants: ColorVariant[] = [];
   sizeVariants: ProductSizeVariant[] = [];
+  categoryType: CategoryType;
+  subCategoryType: SubCategoryType;
+}
+export class ColorVariant {
+  // even though price doesnt change, there are different images for differernt colors
+  constructor(public colorKey: string, public colorValue: string, public imgFileName: string) {
+
+  }
+}
+export enum ColorKey {
+
+  MAROON = 'Maroon', PURPLE = 'Purple', YELLOW = 'Yellow', RED = 'Red', SKYBLUE = 'Sky Blue', BLACK = 'Black', CHARCOALMELANGE = 'Charcoal Melange', GREEN = 'Green', GREYMELANGE = 'Grey Melange', NAVYBLUE = 'Navy Blue', ROYALBLUE = 'Royal Blue', WHITE = 'White', FLAGGREEN = 'Flag Green', GOLDENYELLOW = 'Golden Yellow', COFFEEBROWN = 'Coffee Brown', PETROLBLUE = 'Petrol Blue', STEELGREY = 'Steel Grey', BRICKRED = 'Brick Red', OLIVEGREEN = 'Olive Green'
 }
 export class ProductSku {
   productId: string;
   produttVariantId: string;
   imagePosId: string;
-  color: string;
+  colorVariantId: string;
 }
 
 /**
@@ -120,8 +132,7 @@ export class ImagePosition {
 
 export class Category {
   public __selected = false;
-  constructor(public type: CategoryType) {
-
+  constructor(public type: CategoryType, public subCategories: SubCategory[]) {
   }
 }
 export class SubCategory {

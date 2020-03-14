@@ -1,8 +1,17 @@
 <div class="categories">
-    <div class="category" [class.selected]="category.__selected" *ngFor="let category of state.categories" (click)="selectCategory(category)">{{category.title}}</div>
+    <div class="category" [class.selected]="selectedCategory===category" *ngFor="let category of state.categories"
+        (click)="selectCategory(category)">{{category.type}}</div>
 </div>
+<div class="sub-categories">
+    <div class="sub-category" [class.selected]="selectedSubCategory===subCategory"
+        *ngFor="let subCategory of selectedCategory.subCategories" (click)="selectSubCategory(subCategory)">
+        {{subCategory.type}}
+    </div>
+</div>
+
 <div class="products">
     <div class="product" *ngFor="let product of state.products">
-
+        <img src="/assets/rneck-men.png" class="tshirt" alt="">
+        <img src="/assets/cars/car1.png" class="design" alt="">
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from '../state.service';
-import { Category } from 'src/common';
+import { Category, SubCategory } from 'src/common';
 
 @Component({
   selector: 'app-product-list',
@@ -11,11 +11,20 @@ export class ProductListComponent implements OnInit {
 
   constructor(public state: State) { }
 
+  selectedCategory: Category;
+  selectedSubCategory: SubCategory;
   ngOnInit(): void {
+    this.selectedCategory = this.state.categories[0];
+    this.selectedSubCategory = this.selectedCategory.subCategories[0];
   }
+
   selectCategory(category: Category) {
-    this.state.categories.forEach(category => category.__selected = false);
-    category.__selected = true;
+    this.selectedCategory = category;
+    this.selectedSubCategory = this.selectedCategory.subCategories[0];
+  }
+
+  selectSubCategory(subCategory: SubCategory) {
+    this.selectedSubCategory = subCategory;
   }
 
 }
