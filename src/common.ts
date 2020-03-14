@@ -81,6 +81,7 @@ export enum CountryStates {
 }
 
 export class Product {
+  prodImgFolderName: string;
   title: string;
   description: string;
   id: string;
@@ -88,7 +89,6 @@ export class Product {
   sizeVariants: ProductSizeVariant[] = [];
   categoryType: CategoryType;
   subCategoryType: SubCategoryType;
-  __isMouseover?= false;
 }
 export class ColorVariant {
   // even though price doesnt change, there are different images for differernt colors
@@ -104,6 +104,8 @@ export class ProductSku {
   produttVariantId: string;
   imagePosId: string;
   colorVariantId: string;
+  __isMouseover?= false;
+  __selectedColor?: ColorKey;
 }
 
 /**

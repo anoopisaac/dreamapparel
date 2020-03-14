@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from '../state.service';
-import { Category, SubCategory, Product } from 'src/common';
+import { Category, SubCategory, Product, ProductSku } from 'src/common';
 
 @Component({
   selector: 'app-product-list',
@@ -23,10 +23,15 @@ export class ProductListComponent implements OnInit {
 
 
   onMouseover(product: Product) {
-    product.__isMouseover = true;
+    product. = true;
   }
   onMouseleave(product: Product) {
     product.__isMouseover = false;
+  }
+
+
+  getProductSkuList(): ProductSku[] {
+    
   }
 
 }

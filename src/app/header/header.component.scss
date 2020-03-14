@@ -9,6 +9,8 @@
         align-self: center;
         justify-self: center;
         width: 25px;
+        position: relative;
+        top: -3px;
     }
     >.categories{
         grid-area: categories;

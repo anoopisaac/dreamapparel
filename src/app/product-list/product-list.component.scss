@@ -1,7 +1,17 @@
 :host{
     display: grid;
     grid-gap: 10px;
-    >.categories,>.sub-categories{
+    position: relative;
+    // &:after{
+    //     content:'';
+    //     position: absolute;
+    //     height: 1px;
+    //     background: var(--separator-color);
+    //     width: 100%;
+    //     top: 0px;
+    // }
+    >.sub-categories{
+        border-bottom: 1px solid var(--separator-color);
         display: grid;
         grid-auto-columns: max-content;
         grid-auto-flow: column;
@@ -9,8 +19,9 @@
         &.sub-categories{
             grid-gap: 30px;
         }
-        justify-content: center;
-        >.category,>.sub-category{
+        padding: 10px 20px;
+        justify-content: start;
+        >.sub-category{
             cursor: pointer;
             font-family: Roboto;
             position: relative;
@@ -20,15 +31,6 @@
             }
             &.selected{
                 color: black;
-                &.category:after{
-                    position: absolute;
-                    content: '';
-                    height: 2px;
-                    background: black;
-                    width: 100%;
-                    top: 100%;
-                    left: 0%;
-                }
             }
         }
     }
@@ -42,8 +44,8 @@
         justify-content: center;
         >.product{
             background:var(--product-bg-color);
-            height: 320px;
-            width: 250px;
+            height: 280px;
+            width: 210px;
             display: grid;
             grid-template-areas: 'img-holder';
             >img{

@@ -1,4 +1,5 @@
 <div class="sub-categories">
+    <p class="txt">FILTERS</p>
     <div class="sub-category" [class.selected]="state.selectedSubCategory===subCategory"
         *ngFor="let subCategory of state.selectedCategory.subCategories" (click)="selectSubCategory(subCategory)">
         {{subCategory.type}}

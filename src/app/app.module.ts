@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 import { FooterComponent } from './footer/footer.component';
 import { SvgIconComponent } from './svg-icon/svg-icon.component';
+import { ProdImageViewerComponent } from './prod-image-viewer/prod-image-viewer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SvgIconComponent } from './svg-icon/svg-icon.component';
     HeaderComponent,
     BreadCrumbsComponent,
     FooterComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    ProdImageViewerComponent
   ],
   imports: [
     BrowserModule,
