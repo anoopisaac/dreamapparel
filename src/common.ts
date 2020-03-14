@@ -88,7 +88,7 @@ export class Product {
   sizeVariants: ProductSizeVariant[] = [];
   categoryType: CategoryType;
   subCategoryType: SubCategoryType;
-  __isMouseover?= true;
+  __isMouseover?= false;
 }
 export class ColorVariant {
   // even though price doesnt change, there are different images for differernt colors

@@ -12,6 +12,8 @@ export class State {
     this.setupForTesting();
   }
 
+  selectedCategory: Category;
+  selectedSubCategory: SubCategory;
   dialogMessage: MessageBox;
   categories: Category[] = [];
   user: User
@@ -36,8 +38,7 @@ export class State {
       colorKeys: [ColorKey.GOLDENYELLOW, ColorKey.MAROON, ColorKey.PURPLE, ColorKey.RED, ColorKey.STEELGREY, ColorKey.BRICKRED, ColorKey.OLIVEGREEN, ColorKey.SKYBLUE, ColorKey.CHARCOALMELANGE, ColorKey.GREEN, ColorKey.GREYMELANGE, ColorKey.ROYALBLUE, ColorKey.WHITE, ColorKey.FLAGGREEN],
       categoryType: CategoryType.MEN,
       subCategoryType: SubCategoryType.VNECK,
-      sizeVariants: [{ size: Size.LARGE, price: 10 }],
-      __isMouseover: true
+      sizeVariants: [{ size: Size.LARGE, price: 10 }]
     }]
     this.imagePositions = [{ imgDataId: ImageType.CARS_MUSTANG, width: 34, height: 34, top: 15, prodId: ProductType.MEN_VNECK }];
     this.imageData = [{ imgId: ImageType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageNames: ['car1.png', 'car2.png'] }]

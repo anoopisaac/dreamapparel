@@ -1,10 +1,6 @@
-<div class="categories">
-    <div class="category" [class.selected]="selectedCategory===category" *ngFor="let category of state.categories"
-        (click)="selectCategory(category)">{{category.type}}</div>
-</div>
 <div class="sub-categories">
-    <div class="sub-category" [class.selected]="selectedSubCategory===subCategory"
-        *ngFor="let subCategory of selectedCategory.subCategories" (click)="selectSubCategory(subCategory)">
+    <div class="sub-category" [class.selected]="state.selectedSubCategory===subCategory"
+        *ngFor="let subCategory of state.selectedCategory.subCategories" (click)="selectSubCategory(subCategory)">
         {{subCategory.type}}
     </div>
 </div>
@@ -14,8 +10,8 @@
         (mouseleave)="onMouseleave(product)">
         <img src="/assets/rneck-men.png" class="tshirt" alt="">
         <img src="/assets/cars/car1.png" class="design" alt="">
-        <div class="add-to-cart">
-            <app-svg-icon [icon]="'bag'" class="bag" *ngIf="product.__isMouseover===true"></app-svg-icon>
+        <div class="add-to-cart" *ngIf="product.__isMouseover===true">
+            <app-svg-icon [icon]="'bag'" class="bag"></app-svg-icon>
         </div>
     </div>
 </div>

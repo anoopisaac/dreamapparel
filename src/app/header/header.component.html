@@ -1,3 +1,8 @@
+<app-svg-icon class="logo" [icon]="'logo'"></app-svg-icon>
+<div class="categories">
+    <div class="category" [class.selected]="state.selectedCategory===category" *ngFor="let category of state.categories"
+        (click)="selectCategory(category)">{{category.type}}</div>
+</div>
 <div class="header-icons">
     <app-svg-icon [icon]="'cart'"></app-svg-icon>
     <app-svg-icon [icon]="'user'"></app-svg-icon>

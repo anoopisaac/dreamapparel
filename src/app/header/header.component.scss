@@ -1,9 +1,45 @@
 :host{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 150px 1fr max-content;
     height: max-content;
     height: 50px;
+    grid-template-areas: 'logo categories top-menu';
+    >.logo{
+        grid-area: logo;
+        align-self: center;
+        justify-self: center;
+        width: 25px;
+    }
+    >.categories{
+        grid-area: categories;
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        grid-gap: 40px;
+        justify-content: start;
+        align-self: center;
+        >.category{
+            cursor: pointer;
+            font-family: Roboto;
+            font-size: 13px;
+            position: relative;
+            color: #b9b6b6;
+            &.selected{
+                color: black;
+                &.category:after{
+                    position: absolute;
+                    content: '';
+                    height: 2px;
+                    background: black;
+                    width: 100%;
+                    top: 100%;
+                    left: 0%;
+                }
+            }
+        }
+    }
     .header-icons{
+        grid-area: top-menu;
         position: relative;
         right: 10px;
         align-self: center;

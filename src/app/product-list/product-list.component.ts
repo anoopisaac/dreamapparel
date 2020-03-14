@@ -11,20 +11,14 @@ export class ProductListComponent implements OnInit {
 
   constructor(public state: State) { }
 
-  selectedCategory: Category;
-  selectedSubCategory: SubCategory;
-  ngOnInit(): void {
-    this.selectedCategory = this.state.categories[0];
-    this.selectedSubCategory = this.selectedCategory.subCategories[0];
-  }
 
-  selectCategory(category: Category) {
-    this.selectedCategory = category;
-    this.selectedSubCategory = this.selectedCategory.subCategories[0];
+  ngOnInit(): void {
+    this.state.selectedCategory = this.state.categories[0];
+    this.state.selectedSubCategory = this.state.selectedCategory.subCategories[0];
   }
 
   selectSubCategory(subCategory: SubCategory) {
-    this.selectedSubCategory = subCategory;
+    this.state.selectedSubCategory = subCategory;
   }
 
 
@@ -32,7 +26,7 @@ export class ProductListComponent implements OnInit {
     product.__isMouseover = true;
   }
   onMouseleave(product: Product) {
-    product.__isMouseover = true;
+    product.__isMouseover = false;
   }
 
 }
