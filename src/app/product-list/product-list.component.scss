@@ -59,6 +59,27 @@
                 }
                 // top: -10%;
             }
+            >.add-to-cart{
+                grid-area: img-holder;
+                position: relative;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                align-self: end;
+                justify-self: end;
+                z-index: 1;
+                display: grid;
+                top: 15px;
+                left: -9px;
+                background: var(--short-cut-color);
+                >.bag{
+                    width: 15px;
+                    height: 15px;
+                    fill: white;
+                    justify-self: center;
+                }
+            }
+            
         }
     }
 }

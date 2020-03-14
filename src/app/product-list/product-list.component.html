@@ -10,8 +10,12 @@
 </div>
 
 <div class="products">
-    <div class="product" *ngFor="let product of state.products">
+    <div class="product" *ngFor="let product of state.products" (mouseover)="onMouseover(product)"
+        (mouseleave)="onMouseleave(product)">
         <img src="/assets/rneck-men.png" class="tshirt" alt="">
         <img src="/assets/cars/car1.png" class="design" alt="">
+        <div class="add-to-cart">
+            <app-svg-icon [icon]="'bag'" class="bag" *ngIf="product.__isMouseover===true"></app-svg-icon>
+        </div>
     </div>
 </div>

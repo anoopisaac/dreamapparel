@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ImagePosition, ImageData, ImageType, ProductType, Category, CategoryType, SubCategoryType, SubCategory, ColorVariant, ColorCode, ColorKey } from 'src/common';
+import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ImagePosition, ImageData, ImageType, ProductType, Category, CategoryType, SubCategoryType, SubCategory, ColorVariant, ColorKey } from 'src/common';
 import { BaseComponent } from './base/base.component';
 import { User } from 'firebase';
 
@@ -33,12 +33,11 @@ export class State {
       title: 'v neck',
       description: `v neck well qualified`,
       id: ProductType.MEN_VNECK,
-
-      MAROON = 'Maroon', PURPLE = 'Purple', YELLOW = 'Yellow', RED = 'Red', SKYBLUE = 'Sky Blue', BLACK = 'Black', CHARCOALMELANGE = 'Charcoal Melange', GREEN = 'Green', GREYMELANGE = 'Grey Melange', NAVYBLUE = 'Navy Blue', ROYALBLUE = 'Royal Blue', WHITE = 'White', FLAGGREEN = 'Flag Green', GOLDENYELLOW = 'Golden Yellow', COFFEEBROWN = 'Coffee Brown', PETROLBLUE = 'Petrol Blue', STEELGREY = 'Steel Grey', BRICKRED = 'Brick Red', OLIVEGREEN = 'Olive Green'
-
+      colorKeys: [ColorKey.GOLDENYELLOW, ColorKey.MAROON, ColorKey.PURPLE, ColorKey.RED, ColorKey.STEELGREY, ColorKey.BRICKRED, ColorKey.OLIVEGREEN, ColorKey.SKYBLUE, ColorKey.CHARCOALMELANGE, ColorKey.GREEN, ColorKey.GREYMELANGE, ColorKey.ROYALBLUE, ColorKey.WHITE, ColorKey.FLAGGREEN],
       categoryType: CategoryType.MEN,
       subCategoryType: SubCategoryType.VNECK,
-      sizeVariants: [{ size: Size.LARGE, price: 10 }]
+      sizeVariants: [{ size: Size.LARGE, price: 10 }],
+      __isMouseover: true
     }]
     this.imagePositions = [{ imgDataId: ImageType.CARS_MUSTANG, width: 34, height: 34, top: 15, prodId: ProductType.MEN_VNECK }];
     this.imageData = [{ imgId: ImageType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageNames: ['car1.png', 'car2.png'] }]

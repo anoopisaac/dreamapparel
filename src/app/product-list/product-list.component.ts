@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from '../state.service';
-import { Category, SubCategory } from 'src/common';
+import { Category, SubCategory, Product } from 'src/common';
 
 @Component({
   selector: 'app-product-list',
@@ -25,6 +25,14 @@ export class ProductListComponent implements OnInit {
 
   selectSubCategory(subCategory: SubCategory) {
     this.selectedSubCategory = subCategory;
+  }
+
+
+  onMouseover(product: Product) {
+    product.__isMouseover = true;
+  }
+  onMouseleave(product: Product) {
+    product.__isMouseover = true;
   }
 
 }

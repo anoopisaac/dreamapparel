@@ -84,19 +84,19 @@ export class Product {
   title: string;
   description: string;
   id: string;
-  colorVariants: ColorVariant[] = [];
+  colorKeys: ColorKey[] = [];
   sizeVariants: ProductSizeVariant[] = [];
   categoryType: CategoryType;
   subCategoryType: SubCategoryType;
+  __isMouseover?= true;
 }
 export class ColorVariant {
   // even though price doesnt change, there are different images for differernt colors
-  constructor(public colorKey: string, public colorValue: string, public imgFileName: string) {
+  constructor(public colorKey: string, public imgFileName: string, public colorValue: string) {
 
   }
 }
 export enum ColorKey {
-
   MAROON = 'Maroon', PURPLE = 'Purple', YELLOW = 'Yellow', RED = 'Red', SKYBLUE = 'Sky Blue', BLACK = 'Black', CHARCOALMELANGE = 'Charcoal Melange', GREEN = 'Green', GREYMELANGE = 'Grey Melange', NAVYBLUE = 'Navy Blue', ROYALBLUE = 'Royal Blue', WHITE = 'White', FLAGGREEN = 'Flag Green', GOLDENYELLOW = 'Golden Yellow', COFFEEBROWN = 'Coffee Brown', PETROLBLUE = 'Petrol Blue', STEELGREY = 'Steel Grey', BRICKRED = 'Brick Red', OLIVEGREEN = 'Olive Green'
 }
 export class ProductSku {
