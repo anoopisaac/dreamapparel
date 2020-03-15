@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ImagePosition, ImageData as DesignImage, ImageType, ProductType, Category, CategoryType, SubCategoryType, SubCategory, ColorVariant, ColorKey, ProductSku } from 'src/common';
+import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ProductDesign as ProductDesign, ProductType, Category, CategoryType, SubCategoryType, SubCategory, ColorVariant, ColorKey, ProductSku, DesignImage, ImageDesignKey } from 'src/common';
 import { BaseComponent } from './base/base.component';
 import { User } from 'firebase';
 
@@ -24,28 +24,39 @@ export class State {
   components: BaseComponent[] = [];
   products: Product[] = [];
   cart: Cart;
-  imagePositions: ImagePosition[] = [];
+  // we will use this one as the mapping for product type and design
+  productDesigns: ProductDesign[] = [];
   desingData: DesignImage[] = [];
   // single prod might have so many images associated to it
   // prodImageMapping: ProductImageMapping[] = [];
 
   setupForTesting() {
     this.setupCategories();
+    this.setDesignData();
     this.setProductData();
-    this.setImageData();
+    this.setProductDesignMapping();
     // this.prodImageMapping = [{ imgDataId: 'cars-mustang', imgPosId: 'vneck-men-cars', prodId: 'v' }]
   }
 
   /**
    * set master designs and how a design needs to positioned for a particular product.
    */
-  private setImageData() {
-    this.imagePositions = [{ imgDataId: ImageType.CARS_MUSTANG, width: 34, height: 34, top: 15, prodId: ProductType.MEN_VNECK }];
-    this.desingData = [{ imgId: ImageType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageNames: ['car1.png', 'car2.png'] }]
+  private setDesignData() {
+    this.desingData = [{ designId: ImageDesignKey.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageNames: ['car1.png', 'car2.png'] }]
   }
 
-  private setProductData() {
-    this.products = [{
+  private setProductDesignMapping() {
+    this.productDesigns = [{ designId: ImageDesignKey.CARS_MUSTANG, prodType: ProductType.MEN_VNECK, width: 34, height: 34, top: 15 }];
+  }
+
+
+
+  /**
+   * this will go through the all the options size variants, colors and images for each product type and create product for each of the combinations 
+   */
+  setProductData() {
+    // first deal with male v neck first
+    const menVneck:Product = {
       prodImgFolderName: ProductType.MEN_VNECK,
       title: 'v neck',
       description: `v neck well qualified`,
@@ -53,25 +64,14 @@ export class State {
       colorKeys: [ColorKey.GOLDENYELLOW, ColorKey.MAROON, ColorKey.PURPLE, ColorKey.RED, ColorKey.STEELGREY, ColorKey.BRICKRED, ColorKey.OLIVEGREEN, ColorKey.SKYBLUE, ColorKey.CHARCOALMELANGE, ColorKey.GREEN, ColorKey.GREYMELANGE, ColorKey.ROYALBLUE, ColorKey.WHITE, ColorKey.FLAGGREEN],
       categoryType: CategoryType.MEN,
       subCategoryType: SubCategoryType.VNECK,
-      sizeVariants: [{ size: Size.LARGE, price: 10 }]
-    }];
+      sizeVariants: [{ size: Size.SMALL, price: 10 }, { size: Size.MEDIUM, price: 10 }, { size: Size.LARGE, price: 10 }, { size: Size.XLARGE, price: 10 }]
+    }
+
+    this.products = [menVneck];
   }
 
-  /**
-   * this will go through the all the options size variants, colors and images for each product type and create product for each of the combinations 
-   */
-  setupProductSkus(): ProductSku[] {
-    this.products.forEach(itProd => {
-      itProd.sizeVariants.forEach(itSize => {
-        itProd.colorKeys.forEach(itColor => {
-
-        });
-      })
-    })
-  }
-
-  getDesignsByProduct() {
-
+  getDesignsByProduct(productType: ProductType) {
+    const productDesigns: ProductDesign[] = this.productDesigns.filter(itDesignPos => itDesignPos.prodType === productType);
   }
 
   setupCategories() {

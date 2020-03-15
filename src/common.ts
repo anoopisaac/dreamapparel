@@ -89,6 +89,7 @@ export class Product {
   sizeVariants: ProductSizeVariant[] = [];
   categoryType: CategoryType;
   subCategoryType: SubCategoryType;
+  __designs?: ProductDesign[] = [];
 }
 export class ColorVariant {
   // even though price doesnt change, there are different images for differernt colors
@@ -100,10 +101,11 @@ export enum ColorKey {
   MAROON = 'Maroon', PURPLE = 'Purple', YELLOW = 'Yellow', RED = 'Red', SKYBLUE = 'Sky Blue', BLACK = 'Black', CHARCOALMELANGE = 'Charcoal Melange', GREEN = 'Green', GREYMELANGE = 'Grey Melange', NAVYBLUE = 'Navy Blue', ROYALBLUE = 'Royal Blue', WHITE = 'White', FLAGGREEN = 'Flag Green', GOLDENYELLOW = 'Golden Yellow', COFFEEBROWN = 'Coffee Brown', PETROLBLUE = 'Petrol Blue', STEELGREY = 'Steel Grey', BRICKRED = 'Brick Red', OLIVEGREEN = 'Olive Green'
 }
 export class ProductSku {
-  productId: string;
-  produttVariantId: string;
-  imagePosId: string;
-  colorVariantId: string;
+  productType: ProductType;
+  sizeVariant: ProductSizeVariant;
+  colorVariantId: ColorVariant;
+  // we will do a combination of product type and the below design to get the palcement
+  designId: ImageDesignKey;
   __isMouseover?= false;
   __selectedColor?: ColorKey;
 }
@@ -111,11 +113,11 @@ export class ProductSku {
 /**
  * this will be specific for each product for ex: men v neck will have different image size compare to women vneck even though image is same
  */
-export class ImagePosition {
+export class ProductDesign {
   // holds the mapping between image data (ex:cars) with prodid ex: men vneck 
-  imgDataId: string;
+  designId: ImageDesignKey;
   // you might need mapping directly with size variant with is different for different size variant
-  prodId: string;
+  prodType: ProductType;
   width: number;
   height: number;
   // how far is image placed from the top.
@@ -148,12 +150,12 @@ export enum ProductType {
   MEN_VNECK = 'MEN_VNECK', WOMEN_VNECK = 'WOMEN_VNECK', MEN_ROUND_NECK = 'MEN_ROUND_NECK', WOMEN_ROUND_NECK = 'WOMEN_ROUND_NECK'
 }
 
-export enum ImageType {
+export enum ImageDesignKey {
   CARS_MUSTANG = 'CARS_MUSTANG', KIDS_CUTE_ANIMALS = 'KIDS_CUTE_ANIMALS', KIDS_CUTE_ANIMALS_WATER_COLOR = 'KIDS_CUTE_ANIMALS_WATER_COLOR'
 }
 
-export class ImageData {
-  imgId: ImageType;
+export class DesignImage {
+  designId: ImageDesignKey;
   // what kind of image, is it car, animal etc
   tagName: string;
   folderName: string;
