@@ -56,7 +56,7 @@ export class State {
    */
   setProductData() {
     // first deal with male v neck first
-    const menVneck:Product = {
+    const menVneck: Product = {
       prodImgFolderName: ProductType.MEN_VNECK,
       title: 'v neck',
       description: `v neck well qualified`,
@@ -66,12 +66,15 @@ export class State {
       subCategoryType: SubCategoryType.VNECK,
       sizeVariants: [{ size: Size.SMALL, price: 10 }, { size: Size.MEDIUM, price: 10 }, { size: Size.LARGE, price: 10 }, { size: Size.XLARGE, price: 10 }]
     }
-
     this.products = [menVneck];
   }
 
-  getDesignsByProduct(productType: ProductType) {
+  getDesignsByProduct(productType: ProductType): ProductDesign[] {
     const productDesigns: ProductDesign[] = this.productDesigns.filter(itDesignPos => itDesignPos.prodType === productType);
+    return productDesigns;
+  }
+  getDesignsById(designKey: ImageDesignKey): DesignImage {
+    return this.desingData.find(itDesign => itDesign.designId === designKey);
   }
 
   setupCategories() {
