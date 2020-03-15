@@ -7,12 +7,15 @@
 </div>
 
 <div class="products">
-    <div class="product" *ngFor="let product of state.products" (mouseover)="onMouseover(product)"
-        (mouseleave)="onMouseleave(product)">
-        <img src="/assets/rneck-men.png" class="tshirt" alt="">
-        <img src="/assets/cars/car1.png" class="design" alt="">
-        <div class="add-to-cart" *ngIf="product.__isMouseover===true">
-            <app-svg-icon [icon]="'bag'" class="bag"></app-svg-icon>
+    <ng-container *ngFor="let product of state.products">
+        <div class="product" *ngFor="let prodDesign of product.__designs" (mouseover)="onMouseover(prodDesign)"
+            (mouseleave)="onMouseleave(prodDesign)">
+            <!-- <img src="/assets/rneck-men.png" class="tshirt" alt="">
+            <img src="/assets/cars/car1.png" class="design" alt=""> -->
+
+            <div class="add-to-cart" *ngIf="prodDesign.__isMouseover===true">
+                <app-svg-icon [icon]="'bag'" class="bag"></app-svg-icon>
+            </div>
         </div>
-    </div>
+    </ng-container>
 </div>

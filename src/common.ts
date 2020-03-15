@@ -81,6 +81,7 @@ export enum CountryStates {
 }
 
 export class Product {
+  // this folder contains all the images for different colors for a particular product type, for ex: all colors for men vneck
   prodImgFolderName: string;
   title: string;
   description: string;
@@ -105,9 +106,8 @@ export class ProductSku {
   sizeVariant: ProductSizeVariant;
   colorVariantId: ColorVariant;
   // we will do a combination of product type and the below design to get the palcement
-  designId: ImageDesignKey;
-  __isMouseover?= false;
-  __selectedColor?: ColorKey;
+  designId: string;
+
 }
 
 /**
@@ -115,13 +115,14 @@ export class ProductSku {
  */
 export class ProductDesign {
   // holds the mapping between image data (ex:cars) with prodid ex: men vneck 
-  designId: ImageDesignKey;
+  designId: string;
   // you might need mapping directly with size variant with is different for different size variant
   prodType: ProductType;
   width: number;
   height: number;
   // how far is image placed from the top.
   top: number;
+  __isMouseOver?= false;
 }
 
 // /**
@@ -150,16 +151,21 @@ export enum ProductType {
   MEN_VNECK = 'MEN_VNECK', WOMEN_VNECK = 'WOMEN_VNECK', MEN_ROUND_NECK = 'MEN_ROUND_NECK', WOMEN_ROUND_NECK = 'WOMEN_ROUND_NECK'
 }
 
-export enum ImageDesignKey {
+// export enum ImageDesignKey {
+//   CARS_MUSTANG = 'CARS_MUSTANG', KIDS_CUTE_ANIMALS = 'KIDS_CUTE_ANIMALS', KIDS_CUTE_ANIMALS_WATER_COLOR = 'KIDS_CUTE_ANIMALS_WATER_COLOR'
+// }
+export enum ImageDesignType {
   CARS_MUSTANG = 'CARS_MUSTANG', KIDS_CUTE_ANIMALS = 'KIDS_CUTE_ANIMALS', KIDS_CUTE_ANIMALS_WATER_COLOR = 'KIDS_CUTE_ANIMALS_WATER_COLOR'
 }
 
 export class DesignImage {
-  designId: ImageDesignKey;
+  designId: string;
+  // some cases several designs belongs to one group and the placing will be same, for those we will get 
+  designType: ImageDesignType;
   // what kind of image, is it car, animal etc
   tagName: string;
   folderName: string;
-  imageNames: string[] = [];
+  imageName: string;
 }
 
 export class ProductSizeVariant {

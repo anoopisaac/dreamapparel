@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ProductDesign as ProductDesign, ProductType, Category, CategoryType, SubCategoryType, SubCategory, ColorVariant, ColorKey, ProductSku, DesignImage, ImageDesignKey } from 'src/common';
+import { MessageBox, Earning, AppUser, ContactUsForm, Product, Cart, Size, ProductDesign as ProductDesign, ProductType, Category, CategoryType, SubCategoryType, SubCategory, ColorVariant, ColorKey, ProductSku, DesignImage, ImageDesignType, } from 'src/common';
 import { BaseComponent } from './base/base.component';
 import { User } from 'firebase';
 
@@ -42,11 +42,12 @@ export class State {
    * set master designs and how a design needs to positioned for a particular product.
    */
   private setDesignData() {
-    this.desingData = [{ designId: ImageDesignKey.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageNames: ['car1.png', 'car2.png'] }]
+    this.desingData = [{ designId: 'mustang-car-1', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car1.png' }]
+    this.desingData = [{ designId: 'mustang-car-2', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car2.png' }]
   }
 
   private setProductDesignMapping() {
-    this.productDesigns = [{ designId: ImageDesignKey.CARS_MUSTANG, prodType: ProductType.MEN_VNECK, width: 34, height: 34, top: 15 }];
+    this.productDesigns = [{ designId: 'mustang-car-1', prodType: ProductType.MEN_VNECK, width: 34, height: 34, top: 15 }];
   }
 
 
@@ -69,12 +70,16 @@ export class State {
     this.products = [menVneck];
   }
 
+  /**
+   * get all the mapped designs for a product type for ex: men vneck
+   * @param productType 
+   */
   getDesignsByProduct(productType: ProductType): ProductDesign[] {
-    const productDesigns: ProductDesign[] = this.productDesigns.filter(itDesignPos => itDesignPos.prodType === productType);
+    const productDesigns: ProductDesign[] = this.productDesigns.filter(prodDesign => prodDesign.prodType === productType);
     return productDesigns;
   }
-  getDesignsById(designKey: ImageDesignKey): DesignImage {
-    return this.desingData.find(itDesign => itDesign.designId === designKey);
+  getDesignsById(designId: string): DesignImage {
+    return this.desingData.find(itDesign => itDesign.designId === designId);
   }
 
   setupCategories() {
