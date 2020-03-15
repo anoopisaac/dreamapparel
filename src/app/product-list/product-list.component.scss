@@ -39,7 +39,7 @@
         display: grid;
         height: max-content;
         grid-template-columns: repeat(4,max-content);
-        grid-gap: 10px;
+        grid-gap: 30px;
         grid-auto-flow: column;
         justify-content: center;
         >.product{

@@ -44,13 +44,52 @@ export class State {
    */
   private setDesignData() {
     this.desingData = [
-      { designId: 'mustang-car-1', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car1.png' },
-      { designId: 'mustang-car-2', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car2.png' }
+      { designId: 'mustang-01', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-01.png' },
+      { designId: 'mustang-02', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-02.png' },
+      { designId: 'mustang-03', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-03.png' },
+      { designId: 'mustang-04', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-04.png' },
+      { designId: 'mustang-05', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-05.png' },
+      { designId: 'mustang-06', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-06.png' },
+      { designId: 'mustang-07', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-07.png' },
+      { designId: 'mustang-08', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-08.png' },
+      { designId: 'mustang-09', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-09.png' },
+      { designId: 'mustang-10', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-10.png' },
+      { designId: 'mustang-11', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-11.png' },
+      { designId: 'mustang-12', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-12.png' },
+      { designId: 'mustang-13', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-13.png' },
+      { designId: 'mustang-14', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-14.png' },
+      { designId: 'mustang-15', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-15.png' },
+      { designId: 'mustang-16', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-16.png' },
+      { designId: 'mustang-17', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-17.png' },
+      { designId: 'mustang-18', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-18.png' },
+      { designId: 'mustang-19', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-19.png' },
+      { designId: 'mustang-20', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-20.png' },
     ]
   }
 
   private setProductDesignMapping() {
-    this.productDesigns = [{ designId: 'mustang-car-1', prodType: ProductType.MEN_VNECK, width: 40, top: 28 }];
+    this.productDesigns = [
+      { designId: 'mustang-01', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-02', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-03', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-04', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-05', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-06', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-07', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-08', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-09', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-10', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-11', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-12', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-13', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-14', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-15', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-16', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-17', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-18', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-19', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+      { designId: 'mustang-20', prodType: ProductType.MEN_VNECK, width: 30, top: 40 },
+    ];
   }
 
 
