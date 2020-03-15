@@ -118,8 +118,8 @@ export class ProductDesign {
   designId: string;
   // you might need mapping directly with size variant with is different for different size variant
   prodType: ProductType;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   // how far is image placed from the top.
   top: number;
   __isMouseOver?= false;

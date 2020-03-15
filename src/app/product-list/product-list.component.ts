@@ -51,5 +51,9 @@ export class ProductListComponent implements OnInit {
     return `/assets/designs/${designImage.folderName}/${designImage.imageName}`
   }
 
+  getImgWidth(prodDesign: ProductDesign){
+    return prodDesign.width;
+  }
+
 
 }

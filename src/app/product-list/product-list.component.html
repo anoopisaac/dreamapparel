@@ -11,7 +11,7 @@
         <div class="product" *ngFor="let prodDesign of product.__designs" (mouseover)="onMouseover(prodDesign)"
             (mouseleave)="onMouseleave(prodDesign)">
             <img [attr.src]="getProductImgUrl(product)" class="tshirt" alt="">
-            <img [attr.src]="getDesignImgUrl(prodDesign)" class="design" alt="">
+            <img [attr.src]="getDesignImgUrl(prodDesign)" class="design" alt="" [style.width.%]="prodDesign.width" [style.height.%]="prodDesign.height" [style.top.%]="prodDesign.top">
             <div class="add-to-cart" *ngIf="prodDesign.__isMouseover===true">
                 <app-svg-icon [icon]="'bag'" class="bag"></app-svg-icon>
             </div>

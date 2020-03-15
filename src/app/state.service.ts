@@ -50,7 +50,7 @@ export class State {
   }
 
   private setProductDesignMapping() {
-    this.productDesigns = [{ designId: 'mustang-car-1', prodType: ProductType.MEN_VNECK, width: 34, height: 34, top: 15 }];
+    this.productDesigns = [{ designId: 'mustang-car-1', prodType: ProductType.MEN_VNECK, width: 40, top: 28 }];
   }
 
 
