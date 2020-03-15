@@ -32,9 +32,10 @@ export class State {
 
   setupForTesting() {
     this.setupCategories();
+    this.setupMasterColorVariants();
     this.setDesignData();
-    this.setProductData();
     this.setProductDesignMapping();
+    this.setProductData();
     // this.prodImageMapping = [{ imgDataId: 'cars-mustang', imgPosId: 'vneck-men-cars', prodId: 'v' }]
   }
 
@@ -42,8 +43,10 @@ export class State {
    * set master designs and how a design needs to positioned for a particular product.
    */
   private setDesignData() {
-    this.desingData = [{ designId: 'mustang-car-1', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car1.png' }]
-    this.desingData = [{ designId: 'mustang-car-2', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car2.png' }]
+    this.desingData = [
+      { designId: 'mustang-car-1', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car1.png' },
+      { designId: 'mustang-car-2', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars', imageName: 'car2.png' }
+    ]
   }
 
   private setProductDesignMapping() {
@@ -65,7 +68,8 @@ export class State {
       colorKeys: [ColorKey.GOLDENYELLOW, ColorKey.MAROON, ColorKey.PURPLE, ColorKey.RED, ColorKey.STEELGREY, ColorKey.BRICKRED, ColorKey.OLIVEGREEN, ColorKey.SKYBLUE, ColorKey.CHARCOALMELANGE, ColorKey.GREEN, ColorKey.GREYMELANGE, ColorKey.ROYALBLUE, ColorKey.WHITE, ColorKey.FLAGGREEN],
       categoryType: CategoryType.MEN,
       subCategoryType: SubCategoryType.VNECK,
-      sizeVariants: [{ size: Size.SMALL, price: 10 }, { size: Size.MEDIUM, price: 10 }, { size: Size.LARGE, price: 10 }, { size: Size.XLARGE, price: 10 }]
+      sizeVariants: [{ size: Size.SMALL, price: 10 }, { size: Size.MEDIUM, price: 10 }, { size: Size.LARGE, price: 10 }, { size: Size.XLARGE, price: 10 }],
+      __designs: this.getDesignsByProduct(ProductType.MEN_VNECK)
     }
     this.products = [menVneck];
   }
@@ -98,7 +102,7 @@ export class State {
     // this.subCategories = [new SubCategory(SubCategoryType.ROUDNECK), new SubCategory(SubCategoryType.VNECK), new SubCategory(SubCategoryType.ROMPERS)]
   }
 
-  setupMasterColorVariants() {
+  private setupMasterColorVariants() {
     this.masterColorVariants = [
       new ColorVariant(ColorKey.MAROON, 'maroon.png', 'marron'),
       new ColorVariant(ColorKey.PURPLE, 'purple.png', 'purple'),

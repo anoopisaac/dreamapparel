@@ -114,7 +114,7 @@ export class ProductSku {
  * this will be specific for each product for ex: men v neck will have different image size compare to women vneck even though image is same
  */
 export class ProductDesign {
-  // holds the mapping between image data (ex:cars) with prodid ex: men vneck 
+  // holds the design id pointing to image design
   designId: string;
   // you might need mapping directly with size variant with is different for different size variant
   prodType: ProductType;
