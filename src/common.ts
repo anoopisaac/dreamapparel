@@ -159,6 +159,7 @@ export enum ImageDesignType {
 }
 
 export class DesignImage {
+  title: string;
   designId: string;
   // some cases several designs belongs to one group and the placing will be same, for those we will get 
   designType: ImageDesignType;

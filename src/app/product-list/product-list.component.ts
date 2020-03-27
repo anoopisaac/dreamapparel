@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit {
     colorKey = colorKey === undefined ? product.colorKeys[0] : colorKey;
     const colorVariant = this.state.masterColorVariants.find(it => it.colorKey === colorKey)
     // return `/assets/product-images/${product.prodImgFolderName}/${colorVariant.imgFileName}`
-    return `/assets/product-images/${product.prodImgFolderName}/red5.png`
+    return `/assets/product-images/${product.prodImgFolderName}/red6.png`
     return `/assets/product-images/${product.prodImgFolderName}/${colorVariant.imgFileName}`
   }
 

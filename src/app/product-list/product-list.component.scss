@@ -39,15 +39,17 @@
         display: grid;
         height: max-content;
         grid-template-columns: repeat(4,max-content);
+        grid-template-rows: 1fr;
         grid-gap: 30px;
-        grid-auto-flow: column;
+        // grid-auto-flow: column;
         justify-content: center;
         >.product{
             background:var(--product-bg-color);
             height: 280px;
             width: 210px;
             display: grid;
-            grid-template-areas: 'img-holder';
+            grid-template-rows: 280px 20px 20px 20px;
+            grid-template-areas: 'img-holder design-title product-title price';
             >img{
                 grid-area: img-holder;
                 position: relative;

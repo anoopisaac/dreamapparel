@@ -44,26 +44,26 @@ export class State {
    */
   private setDesignData() {
     this.desingData = [
-      { designId: 'mustang-01', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-01.png' },
-      { designId: 'mustang-02', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-02.png' },
-      { designId: 'mustang-03', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-03.png' },
-      { designId: 'mustang-04', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-04.png' },
-      { designId: 'mustang-05', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-05.png' },
-      { designId: 'mustang-06', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-06.png' },
-      { designId: 'mustang-07', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-07.png' },
-      { designId: 'mustang-08', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-08.png' },
-      { designId: 'mustang-09', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-09.png' },
-      { designId: 'mustang-10', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-10.png' },
-      { designId: 'mustang-11', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-11.png' },
-      { designId: 'mustang-12', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-12.png' },
-      { designId: 'mustang-13', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-13.png' },
-      { designId: 'mustang-14', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-14.png' },
-      { designId: 'mustang-15', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-15.png' },
-      { designId: 'mustang-16', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-16.png' },
-      { designId: 'mustang-17', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-17.png' },
-      { designId: 'mustang-18', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-18.png' },
-      { designId: 'mustang-19', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-19.png' },
-      { designId: 'mustang-20', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-20.png' },
+      { designId: 'mustang-01', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-01.png', title: 'Ford Mustang' },
+      { designId: 'mustang-02', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-02.png', title: 'Ford Mustang' },
+      { designId: 'mustang-03', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-03.png', title: 'Ford Mustang' },
+      { designId: 'mustang-04', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-04.png', title: 'Ford Mustang' },
+      { designId: 'mustang-05', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-05.png', title: 'Ford Mustang' },
+      { designId: 'mustang-06', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-06.png', title: 'Ford Mustang' },
+      { designId: 'mustang-07', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-07.png', title: 'Ford Mustang' },
+      { designId: 'mustang-08', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-08.png', title: 'Ford Mustang' },
+      { designId: 'mustang-09', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-09.png', title: 'Ford Mustang' },
+      { designId: 'mustang-10', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-10.png', title: 'Ford Mustang' },
+      { designId: 'mustang-11', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-11.png', title: 'Ford Mustang' },
+      { designId: 'mustang-12', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-12.png', title: 'Ford Mustang' },
+      { designId: 'mustang-13', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-13.png', title: 'Ford Mustang' },
+      { designId: 'mustang-14', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-14.png', title: 'Ford Mustang' },
+      { designId: 'mustang-15', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-15.png', title: 'Ford Mustang' },
+      { designId: 'mustang-16', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-16.png', title: 'Ford Mustang' },
+      { designId: 'mustang-17', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-17.png', title: 'Ford Mustang' },
+      { designId: 'mustang-18', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-18.png', title: 'Ford Mustang' },
+      { designId: 'mustang-19', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-19.png', title: 'Ford Mustang' },
+      { designId: 'mustang-20', designType: ImageDesignType.CARS_MUSTANG, tagName: 'cars', folderName: 'cars-mustang', imageName: 'mustang-20.png', title: 'Ford Mustang' },
     ]
   }
 
@@ -101,7 +101,7 @@ export class State {
     // first deal with male v neck first
     const menVneck: Product = {
       prodImgFolderName: ProductType.MEN_VNECK,
-      title: 'v neck',
+      title: 'Cotton T-shirt Round Neck',
       description: `v neck well qualified`,
       id: ProductType.MEN_VNECK,
       colorKeys: [ColorKey.GOLDENYELLOW, ColorKey.MAROON, ColorKey.PURPLE, ColorKey.RED, ColorKey.STEELGREY, ColorKey.BRICKRED, ColorKey.OLIVEGREEN, ColorKey.SKYBLUE, ColorKey.CHARCOALMELANGE, ColorKey.GREEN, ColorKey.GREYMELANGE, ColorKey.ROYALBLUE, ColorKey.WHITE, ColorKey.FLAGGREEN],
@@ -143,7 +143,8 @@ export class State {
 
   private setupMasterColorVariants() {
     this.masterColorVariants = [
-      new ColorVariant(ColorKey.MAROON, 'maroon.png', 'marron'),
+      // skyblue,navyblue,royalblue,steelgrey,brickred,grey melange,charcoal melange,maroon,white,black
+      new ColorVariant(ColorKey.MAROON, 'maroon.png', 'maroon'),
       new ColorVariant(ColorKey.PURPLE, 'purple.png', 'purple'),
       new ColorVariant(ColorKey.YELLOW, 'yellow.png', 'yellow'),
       new ColorVariant(ColorKey.RED, 'red.png', 'red'),
